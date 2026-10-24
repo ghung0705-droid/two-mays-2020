@@ -143,6 +143,32 @@ footer{border-top:3px solid var(--red); padding-block:32px 48px; font:400 13px/1
 /* lightbox */
 .lb{position:fixed; inset:0; z-index:50; background:rgba(10,10,12,.88); display:grid; place-items:center; padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px)); cursor:zoom-out}
 .lb img{max-width:100%; max-height:100%; border-radius:4px; background:#fff}
+
+/* vivid additions */
+.hero-top{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:40px;align-items:center}
+.hero-text{display:grid;gap:22px}
+.cover{margin:0;transform:rotate(2.5deg);transition:transform .3s}
+.cover:hover{transform:rotate(0) scale(1.02)}
+.cover img{border:0;border-radius:3px;box-shadow:0 18px 40px -12px rgba(60,30,110,.45),0 0 0 6px var(--paper),0 0 0 7px var(--rule)}
+.cover figcaption{text-align:center;margin-top:10px}
+@media (max-width:760px){.hero-top{grid-template-columns:1fr}.cover{max-width:220px;justify-self:center}}
+.hero h1 em{background:linear-gradient(transparent 62%,var(--red-soft) 62%)}
+.hero h1 .sum{color:var(--gv)}
+.spread .gv{border-top:5px solid var(--gv)} .spread .hs{border-top:5px solid var(--hs)}
+.spread .note{font-size:16px;color:var(--ink);font-weight:600}
+.zero{font:800 1.05em var(--ui);color:var(--red);background:var(--red-soft);padding:1px 7px;border-radius:3px;white-space:nowrap}
+.sowhat{background:var(--red-soft);border-left:5px solid var(--red);padding:16px 20px;border-radius:0 6px 6px 0}
+.sowhat strong:first-child{color:var(--red);font-family:var(--ui);text-transform:uppercase;letter-spacing:.08em;font-size:13px;display:block;margin-bottom:4px}
+.hl{background:linear-gradient(transparent 58%,#ffe28a 58%);font-weight:600}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hl{background:linear-gradient(transparent 58%,#6b5410 58%)}}
+:root[data-theme="dark"] .hl{background:linear-gradient(transparent 58%,#6b5410 58%)}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:6px}
+.stat{border-radius:6px;padding:16px 18px;background:var(--paper-2);display:grid;gap:4px}
+.stat b{font:800 36px/1 var(--display);font-variant-numeric:tabular-nums}
+.stat.gv b{color:var(--gv)} .stat.hs b{color:var(--hs)} .stat.r b{color:var(--red)}
+.stat span{font:400 13px/1.35 var(--ui);color:var(--ink-2)}
+.callout.trio p strong{color:var(--red)}
+#conclusion .prose p:first-child{font-size:20px;font-family:var(--display);line-height:1.5}
 </style>
 
 <header class="top">
@@ -158,19 +184,29 @@ footer{border-top:3px solid var(--red); padding-block:32px 48px; font:400 13px/1
 
 <main class="wrap" id="top">
   <div class="hero">
-    <div class="issue"><span class="rib">Văn học và Tuổi trẻ</span><span>“Literature and Youth” · No. 5 (454+455) · May 2020 · pp. 76–99</span></div>
-    <h1>Summer for the teachers, <em>pandemic</em> for the students</h1>
-    <p class="q">We digitized ten pages from a Vietnamese school literary magazine printed as schools reopened after the 2020 COVID-19 closures, and asked whose writing the year actually reached.</p>
+    <div class="hero-top">
+      <div class="hero-text">
+        <div class="issue"><span class="rib">Văn học và Tuổi trẻ</span><span>“Literature and Youth” · No. 5 (454+455) · May 2020 · pp. 76–99</span></div>
+        <h1><span class="sum">Summer</span> for the teachers, <em>pandemic</em> for the students</h1>
+        <p class="q">We digitized ten pages from a Vietnamese school literary magazine printed as schools reopened after the 2020 COVID-19 closures, and asked <strong style="color:var(--ink)">whose writing the year actually reached.</strong></p>
+        <div class="stat-row">
+          <div class="stat gv"><b>85.2</b><span>summer words per 1,000, teachers (students: 0)</span></div>
+          <div class="stat hs"><b>25.3</b><span>pandemic words per 1,000, students (teachers: 0)</span></div>
+          <div class="stat r"><b>58</b><span>silent AI changes we caught and reverted</span></div>
+        </div>
+      </div>
+      <figure class="cover"><img src="cover.jpg" alt="Cover of Văn học và Tuổi trẻ, May 2020 issue (454+455): two students sitting on steps under a purple tree" loading="eager"><figcaption>The issue we digitized</figcaption></figure>
+    </div>
     <div class="spread" role="group" aria-label="Words found in only one group">
       <div class="gv">
         <span class="who">Teachers · creative pages · 1,033 words</span>
         <div class="words"><span class="chip">ve<b>24</b><span class="gl">cicada</span></span><span class="chip">nắng<b>9</b><span class="gl">sunshine</span></span><span class="chip">tháng_Năm<b>8</b><span class="gl">May</span></span><span class="chip">mít<b>7</b><span class="gl">jackfruit</span></span><span class="chip">le_ồ<b>6</b><span class="gl">a cicada (local name)</span></span></div>
-        <p class="note">Cicadas, sun, jackfruit, the month of May. Not one pandemic word.</p>
+        <p class="note">Cicadas, sun, jackfruit, the month of May. <span class="zero">Not one</span> pandemic word.</p>
       </div>
       <div class="hs">
         <span class="who">Students · essays · 1,768 words</span>
         <div class="words"><span class="chip">tin_giả<b>11</b><span class="gl">fake news</span></span><span class="chip">đại_dịch<b>6</b><span class="gl">pandemic</span></span><span class="chip">mạng_xã_hội<b>6</b><span class="gl">social media</span></span><span class="chip">tự_học<b>5</b><span class="gl">self-study</span></span><span class="chip">nghỉ_dịch<b>3</b><span class="gl">epidemic break</span></span></div>
-        <p class="note">Fake news, the epidemic, social media, studying alone. Not one summer word.</p>
+        <p class="note">Fake news, the epidemic, social media, studying alone. <span class="zero">Not one</span> summer word.</p>
       </div>
     </div>
   </div>
@@ -255,7 +291,7 @@ nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--
     <div class="cols">
       <div class="flow prose">
         <p>We ran every processed page through <strong>DeepAI Chat</strong>, one page per message, with the class prompt: <span class="vi">"Transcribe this image exactly as written. Keep the line breaks. Do not correct spelling. If you can't read a word, write [???]."</span> We compared it with <strong>Tesseract OCR</strong> and checked all 107 disagreements against the printed page.</p>
-        <p>DeepAI was close to perfect on plain columns, but it <strong>never wrote [???]</strong>. Where it was unsure, it chose a real word that fits, so its errors read as Vietnamese. OCR's errors look like errors.</p>
+        <p>DeepAI was close to perfect on plain columns, but it <span class="zero">never wrote [???]</span>. Where it was unsure, it chose a real word that fits, <span class="hl">so its errors read as Vietnamese.</span> OCR's errors look like errors.</p>
       </div>
       <div>
         <p class="label" style="margin-bottom:10px">Words matching our corrected text, per page</p>
@@ -308,7 +344,7 @@ nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--
           <dt>Alternative</dt><dd>Keep the prompts, which inflates the students' pandemic count with language they did not write.</dd>
           <dt>Trade-off</dt><dd>We lose a direct count of how much the prompt shapes the essay, so we compare the prompts with the essays by close reading (Finding 3).</dd>
         </dl>
-        <figure><img src="prompt-p94.jpg" alt="Photo of the printed essay prompt on page 94, mentioning Covid-19, virus corona, nghỉ học, trải nghiệm ý nghĩa and thay đổi tích cực" loading="lazy"><figcaption>The prompt as printed on p. 94. In English: “During the long time off school to prevent the acute respiratory disease caused by the corona virus (Covid-19), what meaningful experiences have you had? Share your thoughts on the experiences that helped you change for the better.” The key words are already here before the student writes a word.</figcaption></figure>
+        <figure><img src="prompt-p94.jpg" alt="Photo of the printed essay prompt on page 94, mentioning Covid-19, virus corona, nghỉ học, trải nghiệm ý nghĩa and thay đổi tích cực" loading="lazy"><figcaption>The prompt as printed on p. 94. In English: “During the long time off school to prevent the acute respiratory disease caused by the corona virus (Covid-19), what meaningful experiences have you had? Share your thoughts on the experiences that helped you change for the better.” <strong>The key words are already here before the student writes a word.</strong></figcaption></figure>
         </div>
       </div>
       <div class="dec">
@@ -317,7 +353,7 @@ nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--
         <dl>
           <dt>Problem</dt><dd>The magazine prints <span class="vi">đối vợi, bất đầu, ap dụng, giẫy giụa</span> (misspellings of <span class="vi">đối với</span> “towards”, <span class="vi">bắt đầu</span> “begin”, <span class="vi">áp dụng</span> “apply”, <span class="vi">giãy giụa</span> “struggle”), and calls the virus <span class="vi">vi khuẩn</span> (bacterium).</dd>
           <dt>Alternative</dt><dd>Correct them, so Voyant counts <span class="vi">với</span> (with, towards) once instead of splitting it.</dd>
-          <dt>Trade-off</dt><dd>Faithful text, and a clear AI test: DeepAI silently "fixed" three of the four spellings despite the prompt. Cost: four words counted separately, none in our word groups.</dd>
+          <dt>Trade-off</dt><dd>Faithful text, and a clear AI test: <span class="hl">DeepAI silently "fixed" three of the four spellings</span> despite the prompt. Cost: four words counted separately, none in our word groups.</dd>
         </dl>
         <div style="display:grid;gap:16px">
           <figure><img src="print-p98-doi-voi.jpg" alt="Close-up of page 98 showing the misprint đối vợi" loading="lazy"><figcaption>p. 98, as printed: <i>đối vợi</i> (misprint). DeepAI returned the correct <i>đối với</i> (towards).</figcaption></figure>
@@ -342,9 +378,9 @@ nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--
         <div class="cols" style="align-items:start">
           <figure class="chart"><img src="word-groups.jpg" alt="Bar chart of word groups per 1,000 words. Teachers: summer and nature 85.2, nostalgia 14.5, emotion 7.7, family 2.9, school 9.7, internet 0, pandemic 0. Students: summer 0, nostalgia 3.9, emotion 4.5, family 3.9, school 16.9, internet 14.6, pandemic 25.3." loading="lazy"><figcaption>Seven word groups we defined (full word lists in our workbook), counted in Voyant's Document Terms on our two files. Relative frequency = Voyant's relative value (per million) ÷ 1,000.</figcaption></figure>
           <div class="flow prose">
-            <p>Summer and nature make up 85 of every 1,000 teacher words and <strong>none</strong> of the student words. The pandemic and technology together make up 38 of every 1,000 student words and <strong>none</strong> of the teacher words.</p>
+            <p>Summer and nature make up 85 of every 1,000 teacher words and <span class="zero">none</span> of the student words. The pandemic and technology together make up 38 of every 1,000 student words and <span class="zero">none</span> of the teacher words.</p>
             <p>Even the shared word <span class="vi">mùa</span> (season) splits: <span class="vi">mùa hạ, mùa hè</span> (both mean summer) for the teachers, <span class="vi">mùa dịch</span> (the epidemic season) twice for the students.</p>
-            <p><strong>So what:</strong> the two groups feel the summer of 2020 in completely opposite ways. The teachers write about summer in its pure form, which is sometimes less objective than the account of the people who lived through it. The students write about what they actually went through: the epidemic season. <span class="vi">Tin_giả</span> (fake news) leads their words because fake news was a pressing problem at that time. We think the adults left the pandemic out to avoid the negative feelings and confusion of those months, a Covid season that was deeply tragic.</p>
+            <p class="sowhat"><strong>So what</strong> the two groups feel the summer of 2020 in completely opposite ways. The teachers write about summer in its pure form, which is sometimes less objective than the account of the people who lived through it. The students write about what they actually went through: the epidemic season. <span class="vi">Tin_giả</span> (fake news) leads their words because fake news was a pressing problem at that time. We think the adults left the pandemic out to avoid the negative feelings and confusion of those months, a Covid season that was deeply tragic.</p>
             <p>The split in <span class="vi">mùa</span> says the same. For the teachers, <span class="vi">mùa hạ</span> and <span class="vi">mùa hè</span> (summer) are a season to enjoy, to play and to remember the old days. The students write <span class="vi">mùa dịch</span> (the epidemic season): it is still summer, but they do not feel it the way adults do; it is more like a war.</p>
           </div>
         </div>
@@ -359,7 +395,7 @@ nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--
 
       <div class="flow">
         <h3>2 · Students live a different summer from the one adults remember</h3>
-        <p class="prose">Nostalgia words are 3.6 times more frequent in the teacher texts (14.5 vs 4.0 per 1,000). The same word <span class="vi">nhớ</span> means "remember" for the teachers and "miss" for the students.</p>
+        <p class="prose">Nostalgia words are <span class="hl">3.7 times more frequent</span> in the teacher texts (14.5 vs 3.9 per 1,000). The same word <span class="vi">nhớ</span> means <span class="hl">"remember" for the teachers and "miss" for the students.</span></p>
         <div class="cols" style="align-items:start">
           <figure><img src="contexts-nho.jpg" alt="Voyant Contexts for nhớ: four teacher hits, two student hits" loading="lazy"><figcaption>Contexts for <i>nhớ</i> (remember / miss): 4 in GV, 2 in HS.</figcaption></figure>
           <div style="display:grid;gap:12px">
@@ -368,7 +404,7 @@ nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--
             <blockquote class="hs">"Tôi lập kế hoạch cụ thể từng giờ, từng việc trong ngày."<span class="tr">“I made a concrete plan for every hour and every task of the day.”</span><cite>Grade 8 student, p. 95: time as a timetable</cite></blockquote>
           </div>
         </div>
-        <p class="prose"><strong>So what:</strong> the students are living a summer very different from the one the adults remember. The same word <span class="vi">nhớ</span> shows it. For the adults, <span class="vi">nhớ</span> is nostalgia, thinking back to an innocent time. For the students, it is a real wish to go back to school, and the feeling of being shut in while the country was in lockdown.</p>
+        <p class="prose sowhat"><strong>So what</strong> the students are living a summer very different from the one the adults remember. The same word <span class="vi">nhớ</span> shows it. For the adults, <span class="vi">nhớ</span> is nostalgia, thinking back to an innocent time. For the students, it is a real wish to go back to school, and the feeling of being shut in while the country was in lockdown.</p>
       </div>
 
       <div class="flow">
@@ -376,14 +412,14 @@ nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--
         <div class="cols" style="align-items:start">
           <div class="flow prose">
             <p>The teachers' school is classic imagery: <span class="vi">học_trò</span> (pupils), <span class="vi">áo_trắng</span> (the white school uniform), <span class="vi">bài_giảng của thầy</span> (the teacher's lesson), <span class="vi">tan_trường</span> (the end of the school day). The students' school has no uniform and no classroom: <span class="vi">tự_học</span> (self-study, 5), <span class="vi">bài_tập</span> (homework, 3), <span class="vi">sách_giáo_khoa</span> (textbooks, 2), video, online lessons. During the epidemic, students quickly gained access to technology, which was a big shift.</p>
-            <p>But the frame is adult. The Grade 8 essay answers its prompt's "meaningful experiences" and "positive change" almost word for word, ending <span class="vi">"Cảm ơn kì nghỉ dịch"</span> (“Thank you, epidemic holiday”). The Grade 11 essay borrows the war language of the 2020 public campaign: <span class="vi">giặc dịch bệnh</span> (the epidemic as an invading enemy), <span class="vi">chiến sĩ</span> (soldiers), <span class="vi">tuyến đầu</span> (the front line), <span class="vi">hậu phương</span> (the home front), <span class="vi">quyết thắng đại dịch</span> (determined to defeat the pandemic) (16 war-related words; none in GV).</p>
+            <p>But the frame is adult. The Grade 8 essay answers its prompt's "meaningful experiences" and "positive change" almost word for word, ending <span class="hl vi">"Cảm ơn kì nghỉ dịch"</span> (“Thank you, epidemic holiday”). The Grade 11 essay borrows the war language of the 2020 public campaign: <span class="vi">giặc dịch bệnh</span> (the epidemic as an invading enemy), <span class="vi">chiến sĩ</span> (soldiers), <span class="vi">tuyến đầu</span> (the front line), <span class="vi">hậu phương</span> (the home front), <span class="vi">quyết thắng đại dịch</span> (determined to defeat the pandemic) (16 war-related words; none in GV).</p>
           </div>
           <div style="display:grid;gap:16px">
             <figure><img src="p96-cam-on.jpg" alt="Close-up of page 96: the Grade 8 essay ends Cảm ơn kì nghỉ dịch" loading="lazy"><figcaption>End of the Grade 8 essay, p. 96: “Thank you, epidemic holiday, for giving me meaningful experiences and helping me see that I need to change. What about you?” The prompt’s own words come back almost exactly.</figcaption></figure>
             <figure><img src="p99-war-words.jpg" alt="Close-up of page 99: war metaphors chiến sĩ, tuyến đầu, giặc dịch bệnh, giặc fake" loading="lazy"><figcaption>Grade 11 essay, p. 99: “the ‘soldiers’ on the front line against the enemy…”; “facing the ‘epidemic enemy’ while also having to destroy the ‘fake enemy’ to keep the people’s hearts at peace.”</figcaption></figure>
           </div>
         </div>
-        <p class="prose"><strong>So what:</strong> the students' slogan-like language comes from adults, from the moulds adults set, which the students learn and imitate.</p>
+        <p class="prose sowhat"><strong>So what</strong> the students' slogan-like language comes from adults, from the moulds adults set, which the students learn and imitate.</p>
         <p class="prose">We think all three possible explanations play a part: who is writing, the genre and the prompts the students were given, and how the magazine sorts its texts into sections.</p>
       </div>
     </div>
