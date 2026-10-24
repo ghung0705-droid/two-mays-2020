@@ -137,9 +137,6 @@ footer{border-top:3px solid var(--red); padding-block:32px 48px; font:400 13px/1
 .lb{position:fixed; inset:0; z-index:50; background:rgba(10,10,12,.88); display:grid; place-items:center; padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px)); cursor:zoom-out}
 .lb img{max-width:100%; max-height:100%; border-radius:4px; background:#fff}
 </style>
-</head>
-<body>
-
 
 <header class="top">
   <div class="wrap">
@@ -219,8 +216,8 @@ footer{border-top:3px solid var(--red); padding-block:32px 48px; font:400 13px/1
     <div class="sec-head"><span class="pg">03</span><h2>Workflow: one paragraph, five versions</h2></div>
     <p class="prose" style="margin-bottom:24px">Every page went through the same Version Set. Here is a single paragraph from p. 98 at each stage. The magazine itself prints <span class="vi">vi khuẩn</span> (bacterium) for the virus; we keep it as printed.</p>
     <div class="vs">
-      <div class="st"><span class="label">1 · Capture</span><img src="img/vs-master.jpg" alt="Master photo crop of page 98, uncorrected" loading="lazy"><p class="label" style="color:var(--ink-2);letter-spacing:.02em;text-transform:none;font-weight:400">iPhone, 1×, no flash, daylight on a cutting mat. HEIC 2268×4032, untouched.</p></div>
-      <div class="st"><span class="label">2 · Process</span><img src="img/vs-processed.jpg" alt="Processed crop of page 98" loading="lazy"><p class="label" style="color:var(--ink-2);letter-spacing:.02em;text-transform:none;font-weight:400">Four corners marked by hand, perspective corrected, lighting flattened, colour kept.</p></div>
+      <div class="st"><span class="label">1 · Capture</span><img src="vs-master.jpg" alt="Master photo crop of page 98, uncorrected" loading="lazy"><p class="label" style="color:var(--ink-2);letter-spacing:.02em;text-transform:none;font-weight:400">iPhone, 1×, no flash, daylight on a cutting mat. HEIC 2268×4032, untouched.</p></div>
+      <div class="st"><span class="label">2 · Process</span><img src="vs-processed.jpg" alt="Processed crop of page 98" loading="lazy"><p class="label" style="color:var(--ink-2);letter-spacing:.02em;text-transform:none;font-weight:400">Four corners marked by hand, perspective corrected, lighting flattened, colour kept.</p></div>
       <div class="st"><span class="label">3 · Recognize</span><pre><span class="label" style="color:var(--ink-2)">Tesseract OCR</span>
 Nếu như <mark>Covid-l9</mark> là
 dịch bệnh xuất phát từ một
@@ -284,8 +281,8 @@ nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--
           <div style="display:grid;gap:12px;justify-items:start"><span class="label">"dịch" standing alone in student texts</span><span class="big">23 → 2</span><span class="label" style="text-transform:none;letter-spacing:.02em;font-weight:400">unjoined → joined</span></div>
         </div>
         <div class="figs">
-          <figure><img src="img/cirrus-unjoined-crop.jpg" alt="Voyant word cloud of the unjoined corpus with dịch, tin, giả, thức as separate words" loading="lazy"><figcaption>Unjoined: <i>dịch</i> is large; <i>tin, giả, thức, ý</i> float as meaningless halves.</figcaption></figure>
-          <figure><img src="img/contexts-dich-unjoined.jpg" alt="Voyant Contexts listing 23 hits for dịch, all in HS" loading="lazy"><figcaption>Contexts, unjoined corpus: 23 hits for <i>dịch</i>, every one in the student essays.</figcaption></figure>
+          <figure><img src="cirrus-unjoined-crop.jpg" alt="Voyant word cloud of the unjoined corpus with dịch, tin, giả, thức as separate words" loading="lazy"><figcaption>Unjoined: <i>dịch</i> is large; <i>tin, giả, thức, ý</i> float as meaningless halves.</figcaption></figure>
+          <figure><img src="contexts-dich-unjoined.jpg" alt="Voyant Contexts listing 23 hits for dịch, all in HS" loading="lazy"><figcaption>Contexts, unjoined corpus: 23 hits for <i>dịch</i>, every one in the student essays.</figcaption></figure>
         </div>
       </div>
       <div class="dec">
@@ -304,7 +301,12 @@ nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--
           <dt>Trade-off</dt><dd>Faithful text, and a clear AI test: DeepAI silently "fixed" three of the four spellings despite the prompt. Cost: four words counted separately, none in our word groups.</dd>
         </dl>
       </div>
-      <div class="callout prose"><p><strong>In our own words.</strong> [Paste the trio's explanation of these decisions here, up to 500 words, one member per decision.]</p></div>
+      <div class="callout prose">
+        <p><strong>In our own words.</strong> <em>This replaces the video. We wrote these explanations in Vietnamese; Claude translated them into English without adding new ideas.</em></p>
+        <p><strong>1 · Joining compound words.</strong> We joined compound words because single syllables do not show what the writer means or feels. <span class="vi">Tin</span> and <span class="vi">giả</span> on their own say nothing; only <span class="vi">tin giả</span> (fake news) carries the writer's concern. But joining had a cost: <span class="vi">dịch</span> fell from 23 to 2, because it was split into <span class="vi">đại_dịch, dịch_bệnh, nghỉ_dịch, mùa_dịch</span> and others, so the pandemic almost disappeared from the word cloud. So we did both: we used the joined text for the top terms, added related words together into word groups, and kept an unjoined copy to check <span class="vi">dịch</span> and <span class="vi">mùa</span> in context.</p>
+        <p><strong>2 · Removing the essay prompts.</strong> We removed the prompts because they were written by adults. If we had left them in, adult words such as <span class="vi">Covid-19, nghỉ học, thay đổi tích cực</span> would be counted as the students' words, and our judgement about the students would not be objective. Keeping the prompts aside also showed us something: the students answer in the shape the prompt sets, so they had to write inside an adult mould.</p>
+        <p><strong>3 · Keeping the print errors.</strong> We kept the print errors because we wanted the text to stay as close to the original as possible. Using AI to transcribe can improve the text and help preserve it, but that "improvement" is also the problem: the AI corrects things on its own and becomes inaccurate. DeepAI changed <span class="vi">vợi, bất đầu, ap dụng</span> to the correct spelling even though the prompt told it not to, and we only saw this because we checked every difference against the printed page.</p>
+      </div>
     </div>
   </section>
 
@@ -323,29 +325,29 @@ nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--
           <div class="flow prose">
             <p>Summer and nature make up 85 of every 1,000 teacher words and <strong>none</strong> of the student words. The pandemic and technology together make up 38 of every 1,000 student words and <strong>none</strong> of the teacher words.</p>
             <p>Even the shared word <span class="vi">mùa</span> (season) splits: <span class="vi">mùa hạ, mùa hè</span> for the teachers, <span class="vi">mùa dịch</span> (the epidemic season) twice for the students.</p>
-            <p><strong>So what:</strong> a reader of this issue gets two Mays side by side, and only the student one is the May of 2020.</p>
+            <p><strong>So what:</strong> the two groups feel the summer of 2020 in completely opposite ways. The teachers write about summer in its pure form, which is sometimes less objective than the account of the people who lived through it. The students write about what they actually went through: the epidemic season. <span class="vi">Tin_giả</span> leads their words because fake news was a pressing problem at that time.</p>
           </div>
         </div>
         <div class="figs">
-          <figure><img src="img/cirrus-gv-crop.jpg" alt="Voyant word cloud for teacher texts dominated by ve, chú, nắng, tháng_năm" loading="lazy"><figcaption>Cirrus, teachers: <i>ve, chú, nắng, tháng_năm, mít, bắt, kêu</i>.</figcaption></figure>
-          <figure><img src="img/cirrus-hs-crop.jpg" alt="Voyant word cloud for student texts dominated by tôi, mình, người, tin_giả" loading="lazy"><figcaption>Cirrus, students: <i>tôi, mình, người, cách, tin_giả, thông_tin, học</i>.</figcaption></figure>
-          <figure><img src="img/trends.jpg" alt="Voyant Trends: ve, nắng, tháng_năm only in teacher texts; mạng_xã_hội, tự_học only in student texts" loading="lazy"><figcaption>Trends: the lines cross and never meet. <i>đại_dịch</i> (6) sits under <i>mạng_xã_hội</i> (6).</figcaption></figure>
-          <figure><img src="img/document-terms.jpg" alt="Voyant Document Terms table with counts" loading="lazy"><figcaption>Document Terms (#1 = GV, #2 = HS). <i>ve*</i> = 25 because the wildcard also matches <i>ve_sầu</i>; plain <i>ve</i> = 24.</figcaption></figure>
+          <figure><img src="cirrus-gv-crop.jpg" alt="Voyant word cloud for teacher texts dominated by ve, chú, nắng, tháng_năm" loading="lazy"><figcaption>Cirrus, teachers: <i>ve, chú, nắng, tháng_năm, mít, bắt, kêu</i>.</figcaption></figure>
+          <figure><img src="cirrus-hs-crop.jpg" alt="Voyant word cloud for student texts dominated by tôi, mình, người, tin_giả" loading="lazy"><figcaption>Cirrus, students: <i>tôi, mình, người, cách, tin_giả, thông_tin, học</i>.</figcaption></figure>
+          <figure><img src="trends.jpg" alt="Voyant Trends: ve, nắng, tháng_năm only in teacher texts; mạng_xã_hội, tự_học only in student texts" loading="lazy"><figcaption>Trends: the lines cross and never meet. <i>đại_dịch</i> (6) sits under <i>mạng_xã_hội</i> (6).</figcaption></figure>
+          <figure><img src="document-terms.jpg" alt="Voyant Document Terms table with counts" loading="lazy"><figcaption>Document Terms (#1 = GV, #2 = HS). <i>ve*</i> = 25 because the wildcard also matches <i>ve_sầu</i>; plain <i>ve</i> = 24.</figcaption></figure>
         </div>
       </div>
 
       <div class="flow">
-        <h3>2 · Teachers look back, students look at the clock</h3>
+        <h3>2 · Students live a different summer from the one adults remember</h3>
         <p class="prose">Nostalgia words are 3.6 times more frequent in the teacher texts (14.5 vs 4.0 per 1,000). The same word <span class="vi">nhớ</span> means "remember" for the teachers and "miss" for the students.</p>
         <div class="cols" style="align-items:start">
-          <figure><img src="img/contexts-nho.jpg" alt="Voyant Contexts for nhớ: four teacher hits, two student hits" loading="lazy"><figcaption>Contexts for <i>nhớ</i>: 4 in GV, 2 in HS.</figcaption></figure>
+          <figure><img src="contexts-nho.jpg" alt="Voyant Contexts for nhớ: four teacher hits, two student hits" loading="lazy"><figcaption>Contexts for <i>nhớ</i>: 4 in GV, 2 in HS.</figcaption></figure>
           <div style="display:grid;gap:12px">
             <blockquote class="gv">"Giờ nhớ lại thấy lòng mình nôn nao khó tả."<cite>Teacher, <i>Những chú ve</i>, p. 85: remembering childhood</cite></blockquote>
             <blockquote class="hs">"tôi hơi hụt hẫng vì nhớ trường, nhớ lớp."<cite>Grade 8 student, p. 94: missing school during the closure</cite></blockquote>
             <blockquote class="hs">"Tôi lập kế hoạch cụ thể từng giờ, từng việc trong ngày."<cite>Grade 8 student, p. 95: time as a timetable</cite></blockquote>
           </div>
         </div>
-        <p class="prose"><strong>So what:</strong> for the adults, school life is something remembered; for the students it is something being managed, hour by hour, while school is closed.</p>
+        <p class="prose"><strong>So what:</strong> the students are living a summer very different from the one the adults remember.</p>
       </div>
 
       <div class="flow">
@@ -355,9 +357,10 @@ nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--
             <p>The teachers' school is classic imagery: <span class="vi">học_trò, áo_trắng, bài_giảng của thầy, tan_trường</span>. The students' school has no uniform and no classroom: <span class="vi">tự_học</span> (5), <span class="vi">bài_tập</span> (3), <span class="vi">sách_giáo_khoa</span> (2), video, online lessons.</p>
             <p>But the frame is adult. The Grade 8 essay answers its prompt's "meaningful experiences" and "positive change" almost word for word, ending <span class="vi">"Cảm ơn kì nghỉ dịch"</span>. The Grade 11 essay borrows the war language of the 2020 public campaign: <span class="vi">giặc dịch bệnh, chiến sĩ, tuyến đầu, hậu phương, quyết thắng đại dịch</span> (16 war-related words; none in GV).</p>
           </div>
-          <figure><img src="img/contexts-mua-unjoined.jpg" alt="Voyant Contexts for mùa: mùa hạ, mùa hè in GV; mùa dịch twice in HS" loading="lazy"><figcaption>Contexts for <i>mùa</i>, unjoined corpus.</figcaption></figure>
+          <figure><img src="contexts-mua-unjoined.jpg" alt="Voyant Contexts for mùa: mùa hạ, mùa hè in GV; mùa dịch twice in HS" loading="lazy"><figcaption>Contexts for <i>mùa</i>, unjoined corpus.</figcaption></figure>
         </div>
-        <p class="prose"><strong>So what:</strong> the pandemic enters the magazine through the students, but in a frame set by adults. The free-writing space, <span class="vi">Trang sáng tác</span>, stays in a timeless summer.</p>
+        <p class="prose"><strong>So what:</strong> the students' slogan-like language comes from adults, from the moulds adults set, which the students learn and imitate.</p>
+        <p class="prose">We think all three possible explanations play a part: who is writing, the genre and the prompts the students were given, and how the magazine sorts its texts into sections.</p>
       </div>
     </div>
   </section>
@@ -381,8 +384,8 @@ nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--
   <section id="conclusion">
     <div class="sec-head"><span class="pg">08</span><h2>Conclusion</h2></div>
     <div class="flow prose">
-      <p>In this issue, the year 2020 reaches the page only through the students. The teachers' creative pieces describe a timeless May of cicadas and sunlight; the students describe online lessons, timetables, fake news and family meals at home, in words partly set by adults.</p>
-      <p>Counting across sections made this split visible, but the counts only meant something once we read them in context, and they depend on the choices we made along the way.</p>
+      <p>In this issue, teachers and students feel the summer of 2020 in completely opposite ways. The teachers write a pure summer of cicadas and sunlight. The students write the summer they actually went through: the epidemic season of online lessons, timetables and fake news.</p>
+      <p>The students' words also come partly from adults: from the prompts they were set and from the slogans they learned and imitated. So when teachers evaluate students' writing, they should put themselves in the position of the person who is actually living the experience.</p>
     </div>
   </section>
 
@@ -400,7 +403,7 @@ nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--
       </div>
       <div class="flow">
         <p class="label">AI acknowledgement</p>
-        <p style="font-size:15px">We used DeepAI Chat with the class prompt as our AI transcription check. We used Claude to process the photos, run Tesseract, restore lost line breaks, list disagreements, suggest cleaning rules and a compound list, compute word-group counts, and draft the report and this page. Every correction was confirmed by a team member on the paper magazine; [describe what you rewrote or rejected]. Chat records: [DeepAI PDF] · [Claude chat link].</p>
+        <p style="font-size:15px">We used DeepAI Chat with the class prompt as our AI transcription check, and Gemini for feedback on our topic idea. We used Claude to process the photos, run Tesseract, restore lost line breaks, list disagreements, suggest cleaning rules and a compound list, compute word-group counts, draft the method and evidence text, build this page, and translate our own Vietnamese explanations into English. The decision explanations, the "So what" lines and the conclusion are our ideas; Claude translated them without adding new ones. Every correction was confirmed by a team member on the paper magazine. Chat records: [DeepAI PDF] · [Claude chat link].</p>
         <p class="label" style="margin-top:20px">Team</p>
         <p style="font-size:15px">[Member 1] · [Member 2] · [Member 3], CAS3020 Digital Arts and Sciences, Fall 2026.</p>
       </div>
@@ -444,5 +447,4 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.
 document.querySelectorAll('section[id]').forEach(s=>io.observe(s));
 </script>
 
-</body>
 </html>
