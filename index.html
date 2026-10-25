@@ -264,25 +264,25 @@ footer{border-top:3px solid var(--red); padding-block:32px 48px; font:400 13px/1
 
   <section id="workflow">
     <div class="sec-head"><span class="pg">03</span><h2>Workflow: one paragraph, five versions</h2></div>
-    <p class="prose" style="margin-bottom:24px">Every page went through the same Version Set. Here is a single paragraph from p. 98 at each stage. The magazine itself prints <span class="vi">vi khuẩn</span> (bacterium) for the virus; we keep it as printed.</p>
-    <p class="vs-en prose">In English the paragraph reads: “If Covid-19 is an epidemic that comes from a kind of bacterium out in nature, then fake news is like…” Highlighted: what each stage changed (OCR misread <i>19</i> as <i>l9</i>; in stage 5, compound words are joined with “_”).</p>
+    <p class="prose" style="margin-bottom:24px">Every page went through the same Version Set. Here is one passage from p. 98 at each stage. The magazine prints <span class="vi">đối vợi</span>, a misprint of <span class="vi">đối với</span> (towards); we keep it as printed.</p>
+    <p class="vs-en prose">In English the passage reads: “…[posting is] so simple that it makes them hasty in how they act, forgetting their responsibility for their own actions?” Highlighted: what each stage changed. OCR read the misprint correctly; DeepAI silently “fixed” it; we checked the paper and put the printed word back; in stage 5, compound words are joined with “_”.</p>
     <div class="vs">
-      <div class="st"><span class="label">1 · Capture</span><img src="vs-master.jpg" alt="Master photo crop of page 98, uncorrected" loading="lazy"><p class="label" style="color:var(--ink-2);letter-spacing:.02em;text-transform:none;font-weight:400">iPhone, 1×, no flash, daylight on a cutting mat. HEIC 2268×4032, untouched.</p></div>
-      <div class="st"><span class="label">2 · Process</span><img src="vs-processed.jpg" alt="Processed crop of page 98" loading="lazy"><p class="label" style="color:var(--ink-2);letter-spacing:.02em;text-transform:none;font-weight:400">Four corners marked by hand, perspective corrected, lighting flattened, colour kept.</p></div>
+      <div class="st"><span class="label">1 · Capture</span><img src="vs-master.jpg" alt="Detail of the untouched master photo of page 98, showing the line trách nhiệm đối vợi hành" loading="lazy"><p class="label" style="color:var(--ink-2);letter-spacing:.02em;text-transform:none;font-weight:400">iPhone, 1×, no flash, daylight on a cutting mat. HEIC 2268×4032, untouched (detail shown).</p></div>
+      <div class="st"><span class="label">2 · Process</span><img src="vs-processed.jpg" alt="The same passage from the processed copy of page 98" loading="lazy"><p class="label" style="color:var(--ink-2);letter-spacing:.02em;text-transform:none;font-weight:400">Four corners marked by hand, perspective corrected, lighting flattened, colour kept.</p></div>
       <div class="st"><span class="label">3 · Recognize</span><pre><span class="label" style="color:var(--ink-2)">Tesseract OCR</span>
-Nếu như <mark>Covid-l9</mark> là
-dịch bệnh xuất phát từ một
-loại vi khuẩn bên ngoài tự
-nhiên thì tin giả lại tựa như</pre><pre><span class="label" style="color:var(--ink-2)">DeepAI (class prompt)</span>
-Nếu như Covid-19 là
-dịch bệnh xuất phát từ một
-loại vi khuẩn bên ngoài tự
-nhiên thì tin giả lại tựa như</pre></div>
-      <div class="st"><span class="label">4 · Check &amp; correct</span><pre>Nếu như Covid-19 là
-dịch bệnh xuất phát từ một
-loại <mark>vi khuẩn</mark> bên ngoài tự
-nhiên thì tin giả lại tựa như</pre><p class="label" style="color:var(--ink-2);letter-spacing:.02em;text-transform:none;font-weight:400">Checked line by line against the paper magazine. Print error kept.</p></div>
-      <div class="st"><span class="label">5 · Clean &amp; normalize</span><pre>Nếu như Covid-19 là <mark>dịch_bệnh</mark> xuất phát từ một loại <mark>vi_khuẩn</mark> bên ngoài <mark>tự_nhiên</mark> thì <mark>tin_giả</mark> lại tựa như</pre><p class="label" style="color:var(--ink-2);letter-spacing:.02em;text-transform:none;font-weight:400">Lines joined, compounds bound with _ for Voyant. Every change logged.</p></div>
+giản lại khiến họ nóng vội
+trong hành xử mà bỏ quên
+trách nhiệm đối <mark>vợi</mark> hành
+động của bản thân?</pre><pre><span class="label" style="color:var(--ink-2)">DeepAI (class prompt)</span>
+giản lại khiến họ nóng vội
+trong hành xử mà bỏ quên
+trách nhiệm đối <mark>với</mark> hành
+động của bản thân?</pre><p class="label" style="color:var(--ink-2);letter-spacing:.02em;text-transform:none;font-weight:400">OCR kept the misprint. DeepAI changed it, although the prompt said “Do not correct spelling”.</p></div>
+      <div class="st"><span class="label">4 · Check &amp; correct</span><pre>giản lại khiến họ nóng vội
+trong hành xử mà bỏ quên
+trách nhiệm đối <mark>vợi</mark> hành
+động của bản thân?</pre><p class="label" style="color:var(--ink-2);letter-spacing:.02em;text-transform:none;font-weight:400">Checked line by line against the paper magazine. DeepAI’s “fix” reverted to the printed <i>vợi</i> (see Decision 3).</p></div>
+      <div class="st"><span class="label">5 · Clean &amp; normalize</span><pre>giản lại khiến họ <mark>nóng_vội</mark> trong <mark>hành_xử</mark> mà bỏ quên <mark>trách_nhiệm</mark> đối vợi <mark>hành_động</mark> của <mark>bản_thân</mark>?</pre><p class="label" style="color:var(--ink-2);letter-spacing:.02em;text-transform:none;font-weight:400">Lines joined, compounds bound with _ for Voyant. Every change logged.</p></div>
     </div>
   </section>
 
